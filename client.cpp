@@ -1,10 +1,4 @@
-#include <iostream>
-#include <sys/socket.h>
-#include <arpa/inet.h>
-#include <unistd.h>
-#include <cstring>
-#include <thread>
-#include <atomic>
+#include "client.h"
 
 #define PORT 8080
 
@@ -42,7 +36,6 @@ int main()
 {
     int sock = 0;
     struct sockaddr_in serv_addr;
-    char buffer[1024] = {0};
 
     if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0)
     {
